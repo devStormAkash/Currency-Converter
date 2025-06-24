@@ -5,7 +5,7 @@ import useCurrencyInfo from '../hooks/CurrencyInfo';
 
 function App() {
 
-  const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState("")
   const [convertedAmount, setConvertedAmount] = useState(0)
   const [from, setFrom] = useState("USD")
   const [to, setTo] = useState("INR")
@@ -17,7 +17,8 @@ function App() {
   
 
   const convert = () => {
-    setConvertedAmount((amount * (currencyData[to].value)).toFixed(2))
+    let numericValue = parseFloat(amount) || 0
+    setConvertedAmount((numericValue * (currencyData[to].value)).toFixed(2))
     
   }
 

@@ -36,7 +36,7 @@ const InputBox = ({
             value={amount}
             disabled={amountDisable}
             onChange={(e) =>
-              changeAmount && changeAmount(Number(e.target.value))
+              changeAmount && changeAmount((e.target.value))
             }
             className="px-4 py-2  rounded-md border w-2/3 border-gray-300"
           />
